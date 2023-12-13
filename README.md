@@ -12,14 +12,14 @@
     <td align="center"><a href="https://github.com/GoLuckyP"><img src="https://avatars.githubusercontent.com/GoLuckyP" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/SigLee2247"><img src="https://avatars.githubusercontent.com/SigLee2247" width="130px;" alt=""></a></td>
     <td align="center"><a href="https://github.com/bsjin1122"><img src="https://avatars.githubusercontent.com/bsjin1122" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/bsjin1122/start_coding_study"><img src="https://avatars.githubusercontent.com/bsjin1122" width="130px;" alt=""></a></td>
+    <td align="center"><a href="https://github.com/RudySeo"><img src="https://avatars.githubusercontent.com/RudySeo" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/dilmah0203"><b>dilmah0203</b></a></td>
     <td align="center"><a href="https://github.com/GoLuckyP"><b>GoLuckyP</b></a></td>
     <td align="center"><a href="https://github.com/SigLee2247"><b>SigLee2247</b></a></td>
     <td align="center"><a href="https://github.com/bsjin1122"><b>bsjin1122</b></a></td>
-    <td align="center"><a href="https://github.com/bsjin1122/start_coding_study"><b></b></a></td>
+    <td align="center"><a href="https://github.com/RudySeo"><b>RudySeo</b></a></td>
   </tr>
 </table>
 
