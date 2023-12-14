@@ -1,4 +1,4 @@
-package siglee.BOJ.Boj10799;
+package siglee.BOJ.week01;
 
 import java.io.*;
 import java.util.*;
