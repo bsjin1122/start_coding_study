@@ -1,10 +1,11 @@
-package org.BOJ.week01;
+package bsjin1122.BOJ.week01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
+// 단어뒤집기2
 public class BOJ_17413 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
