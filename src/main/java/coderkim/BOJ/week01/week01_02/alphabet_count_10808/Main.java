@@ -1,4 +1,4 @@
-package boj_week1_02.alphabet_count_10808;
+package main.java.coderkim.BOJ.week01.week01_02.alphabet_count_10808;
 
 
 import java.util.Scanner;

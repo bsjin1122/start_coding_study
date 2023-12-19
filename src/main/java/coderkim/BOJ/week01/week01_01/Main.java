@@ -1,6 +1,7 @@
-package boj_week1_01;
+package main.java.coderkim.BOJ.week01.week01_01;
 
 import java.util.Scanner;
+import boj_week1_01.Solution;
 
 /**
   @Since 2023.12.16 토
