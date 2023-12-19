@@ -1,4 +1,4 @@
-package boj_week1_02.find_alphabet_10809;
+package main.java.coderkim.BOJ.week01.week01_02.find_alphabet_10809;
 
 import java.util.Scanner;
 
