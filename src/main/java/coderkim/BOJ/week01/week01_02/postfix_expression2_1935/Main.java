@@ -1,4 +1,4 @@
-package boj_week1_02.postfix_expression2_1935;
+package main.java.coderkim.BOJ.week01.week01_02.postfix_expression2_1935;
 
 import java.util.HashMap;
 import java.util.Map;

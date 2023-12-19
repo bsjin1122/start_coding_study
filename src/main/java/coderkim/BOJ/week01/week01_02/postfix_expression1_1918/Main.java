@@ -1,4 +1,4 @@
-package boj_week1_02.postfix_expression1_1918;
+package main.java.coderkim.BOJ.week01.week01_02.postfix_expression1_1918;
 
 import java.util.Scanner;
 import java.util.Stack;
