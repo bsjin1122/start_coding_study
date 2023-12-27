@@ -1,4 +1,4 @@
-package main.java.coderkim.BOJ.week02.week02_02.input_str_analysis_10820;
+package main.java.coderkim.BOJ.week02.week02_01.input_str_analysis_10820;
 
 import java.util.ArrayList;
 import java.util.List;
