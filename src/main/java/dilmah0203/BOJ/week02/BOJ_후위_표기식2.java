@@ -3,52 +3,51 @@ package src.main.java.dilmah0203.BOJ.week02;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
-public class BOJ_후의_표기식2 {
-
+public class BOJ_후위_표기식2 {
     public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(br.readLine()); //피연산자 개수
+        int n = Integer.parseInt(br.readLine());
         String s = br.readLine();
+        double[] array = new double[n];
 
-        //후위표기식 -> 연산자가 나중에 나온다.
-        //A + (B * C) - (D / E)
-        Map<Character, Double> map = new HashMap<>();
-        Stack<Double> stack = new Stack<>();
-        for (int i = 0; i < n; i++) { //피연산자의 개수만큼 값을 할당
-            double value = Double.parseDouble(br.readLine());
-            map.put((char) ((char) 'A' + i), value);
+        for (int i = 0; i < n; i++) {
+            array[i] = Double.parseDouble(br.readLine());
         }
 
+        Stack<Double> stack = new Stack<>(); //피연산자 저장
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c >= 'A' && c <= 'Z') {
-                stack.push(map.get(c));
-            } else {
+
+            if (c >= 'A' && c <= 'Z') { //영대문자라면
+                stack.push(array[c - 'A']);
+            } else { //연산자라면
                 if (!stack.isEmpty()) {
                     double a = stack.pop();
                     double b = stack.pop();
+
                     switch (c) {
-                        case '-':
-                            stack.push(b - a);
-                            break;
                         case '+':
                             stack.push(b + a);
                             break;
-                        case '*':
-                            stack.push(b * a);
+                        case '-':
+                            stack.push(b - a);
                             break;
                         case '/':
                             stack.push(b / a);
+                            break;
+                        case '*':
+                            stack.push(b * a);
                             break;
                     }
                 }
             }
         }
+
         System.out.printf("%.2f", stack.pop());
+
     }
 }
