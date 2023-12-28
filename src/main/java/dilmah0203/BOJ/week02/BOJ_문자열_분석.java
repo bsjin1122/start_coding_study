@@ -1,4 +1,4 @@
-package src.main.java.dilmah0203.BOJ.week03;
+package src.main.java.dilmah0203.BOJ.week02;
 
 import java.io.*;
 
