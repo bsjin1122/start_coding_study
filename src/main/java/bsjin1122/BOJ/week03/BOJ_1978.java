@@ -30,21 +30,24 @@ public class BOJ_1978 {
         }
 
         int num = 0;
-        int count = 0;
 
         //값 하나씩 소수 검증 (i = 배열에 저장된 입력값 인덱스)
         for(int i=0;i<intArray.length;i++) {
 
+            int j;
+
             //소수구하기
             //값을 2~(n-1)번째 값으로 계속 나눈다.
-            for(int j=2; j <= intArray[i]-1; j++) {
-                if(intArray[i] % j ==0) { //만약 나눈 나머지가 0이면 j는 arr[i]의 약수
-                    count++;
-                    break; //소수가 아닌 것이 확정되면 for문을 빠져나와서 그 다음 입력값으로 넘어감
+            for(j=2; j < intArray[i]; j++) {
+                if(intArray[i] % j == 0) { //만약 나눈 나머지가 0이면 j는 arr[i]의 약수
+                    break; //소수가 아닌 것이 확정되면 for문을 빠져나와서 배열의 다음 입력값으로 넘어감
                 }
             }
 
-            if(intArray[i]!=1 && count==0) {
+            //나머지가 0인 경우가 끝까지 없으면 j는 ++된 상태로 for문이 끝난다.
+            //때문에 j=arr[i]인 경우가 발생한다.
+            //이는 마지막까지 나누어 떨어지는 수가 없음을 의미하며, arr[i] 데이터가 소수임을 뜻한다.
+            if(intArray[i]==j) {
                 num++;
             }
         }
