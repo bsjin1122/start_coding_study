@@ -1,4 +1,4 @@
-package src.main.java.dilmah0203.BOJ.week03;
+package src.main.java.dilmah0203.BOJ.Dec.week03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
