@@ -17,6 +17,7 @@ import java.util.Scanner;
  첫째 줄에 구한 0의 개수를 출력한다.
 
  */
+
 public class Main {
     public static void main(String[] args) {
 

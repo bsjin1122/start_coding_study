@@ -19,6 +19,7 @@ import java.util.Scanner;
  */
 
 public class Main {
+
     // 최대 입력값이 1,000,000까지의 약수 배열을 생성
     static int[] divisors = new int[1000001];
 

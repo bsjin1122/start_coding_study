@@ -30,6 +30,7 @@ public class Main {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
+
         // 0은 2 * 5로 생겨남
         // 조합은 nCm을 계산할 때, n!을 m!과 (n-m)!로 나누면서 중복되는 2와 5의 인수를 제거하기 때문에
         // 2와 5를 둘 다 고려 해야 함
