@@ -1,0 +1,722 @@
+Index: src/main/java/bsjin1122/BOJ/week01/BOJ_10799.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week01/BOJ_10799.java b/src/main/java/bsjin1122/BOJ/week01/BOJ_10799.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week01/BOJ_10799.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,35 +0,0 @@
+-package bsjin1122.BOJ.week01;
+-
+-import java.util.Scanner;
+-import java.util.Stack;
+-
+-// 쇠막대기
+-public class BOJ_10799 {
+-    public static void main(String[] args) {
+-        Scanner sc = new Scanner(System.in);
+-
+-        String input = sc.next();
+-
+-        int result = 0;
+-
+-        Stack<Character> stack = new Stack<>();
+-
+-        for(int i =0; i<input.length(); i++){
+-            if(input.charAt(i) == '('){
+-                stack.push('(');
+-            }else if(input.charAt(i)==')'){
+-                stack.pop();
+-            }
+-
+-            if(i >0){
+-                if(input.charAt(i-1) == '(' && input.charAt(i) ==')'){
+-                    result += stack.size();
+-                }else if(input.charAt(i-1) == ')' && input.charAt(i) == ')'){
+-                    result++;
+-                }
+-            }
+-        }
+-        System.out.println(result);
+-    }
+-}
+-
+Index: src/main/java/bsjin1122/BOJ/week01/BOJ_17413.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week01/BOJ_17413.java b/src/main/java/bsjin1122/BOJ/week01/BOJ_17413.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week01/BOJ_17413.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,57 +0,0 @@
+-package bsjin1122.BOJ.week01;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.Stack;
+-
+-// 단어뒤집기2
+-public class BOJ_17413 {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-
+-
+-        String str = br.readLine(); // 문자열 S입력
+-        StringBuilder sb = new StringBuilder(); // 결과 값을 출력할 StringBuilder
+-        Stack<Character> stack = new Stack <> (); // 후입선출 기능을 이용하기 위한 자료구조 Stack
+-        boolean flag = false;
+-
+-        for(int i =0; i < str.length(); i++){
+-            if(str.charAt(i) == '<'){
+-                while(!stack.isEmpty()){
+-                    sb.append(stack.pop());
+-                }
+-                flag = true;
+-            }
+-            else if(str.charAt(i) == '>'){
+-                flag = false;
+-                sb.append(str.charAt(i));
+-                continue;
+-            }
+-
+-            if(flag == true){
+-                sb.append(str.charAt(i));
+-            }else if(flag == false) {
+-                if (str.charAt(i) == ' ') {
+-                    while (!stack.isEmpty()) {
+-                        sb.append(stack.pop());
+-                    }
+-                    sb.append(' ');
+-                    continue;
+-                } else {
+-                    stack.push(str.charAt(i));
+-                }
+-            }
+-
+-            if(i == str.length() - 1){
+-                while (!stack.isEmpty()) {
+-                    sb.append(stack.pop());
+-                }
+-            }
+-        }
+-        // 결과문 출력
+-        System.out.println(sb);
+-
+-
+-    }
+-}
+Index: src/main/java/bsjin1122/BOJ/week02/BOJ_2609.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week02/BOJ_2609.java b/src/main/java/bsjin1122/BOJ/week02/BOJ_2609.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week02/BOJ_2609.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,46 +0,0 @@
+-package bsjin1122.BOJ.week02;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-
+-public class BOJ_2609 {
+-    /**
+-     * @author bsjin
+-     * @date 2023/12/25
+-     * @title 백준 2609 최대공약수와 최소공배수
+-     *
+-     * 문제
+-     * 두 개의 자연수를 입력받아 최대 공약수와 최소 공배수를 출력하는 프로그램을 작성하시오.
+-     * 첫째 줄에는 입력으로 주어진 두 수의 최대공약수를, 둘째 줄에는 입력으로 주어진 두 수의 최소 공배수를 출력한다.
+-     */
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        String str = br.readLine(); // 문자열 S입력
+-        // 공백을 기준으로 문자열을 분리하여 문자열 배열로 만듭니다.
+-        String[] strArray = str.split(" ");
+-
+-        // int 배열을 선언하여 문자열 배열을 int로 변환하여 담습니다.
+-        int[] intArray = new int[strArray.length];
+-        for (int i = 0; i < strArray.length; i++) {
+-            intArray[i] = Integer.parseInt(strArray[i]);
+-        }
+-
+-        System.out.println(gcd(intArray[0], intArray[1]));
+-        System.out.println(lcm(intArray[0], intArray[1]));
+-
+-
+-    }
+-    public static int gcd(int a, int b) { // 최대공약수
+-        while (b != 0) {
+-            int temp = b;
+-            b = a % b;
+-            a = temp;
+-        }
+-        return a;
+-    }
+- 
+-    public static int lcm(int a, int b) { //최소공배수
+-        return (a * b) / gcd(a, b);
+-    }
+-}
+Index: src/main/java/bsjin1122/BOJ/week02/BOJ_1934.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week02/BOJ_1934.java b/src/main/java/bsjin1122/BOJ/week02/BOJ_1934.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week02/BOJ_1934.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,74 +0,0 @@
+-package bsjin1122.BOJ.week02;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.ArrayList;
+-import java.util.Scanner;
+-import java.util.StringTokenizer;
+-
+-public class BOJ_1934 {
+-    /**
+-     * @author bsjin
+-     * @date 2023/12/25
+-     * @title 백준 1934 최소공배수
+-     *
+-     * 문제
+-     * 두 자연수 A와 B에 대해서, A의 배수이면서 B의 배수인 자연수를 A와 B의 공배수라고 한다.
+-     * 이런 공배수 중에서 가장 작은 수를 최소공배수라고 한다. 예를 들어, 6과 15의 공배수는 30, 60, 90등이 있으며, 최소 공배수는 30이다.
+-     * 두 자연수 A와 B가 주어졌을 때, A와 B의 최소공배수를 구하는 프로그램을 작성하시오.
+-     *
+-     * 입력: 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 1,000)가 주어진다. 둘째 줄부터 T개의 줄에 걸쳐서 A와 B가 주어진다. (1 ≤ A, B ≤ 45,000)
+-     * 출력: 첫째 줄부터 T개의 줄에 A와 B의 최소공배수를 입력받은 순서대로 한 줄에 하나씩 출력한다.
+-     */
+-    public static void main(String[] args) throws IOException {
+-        // 입력은 InputStreamReader를 통해 '문자'를 'char'타입으로 byte단위로 받는다(InputStream 객체로)
+-        // 받은 'char'타입 문자들을 BufferedReader를 통해 직렬화('String'타입으로 변환)한다.
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-
+-        // 입력받은 문자열을 Intger 데이터타입으로 변환한다.(기본형 String)
+-        int N = Integer.parseInt(br.readLine());
+-
+-        // 문자들을 입력받아 String을 만들 StringBuilder선언
+-        // String은 불변의 객체이기 때문에 새로만들거나 합칠때마다
+-        // 새로운 문자열을 참조하기에 비효율적이다.
+-        StringBuilder sb = new StringBuilder();
+-
+-        // String을 delim(delimiter)으로 분리하여 토큰화합니다.
+-        // delim으로는 기본적인 공백문자인 \t(가로탭), \n(줄바꿈), \r(캐리지 리턴) 등이 있습니다.
+-        StringTokenizer st;
+-
+-        for(int i = 0; i < N; i++) {
+-            // 공백 기준으로 토큰화(한번에 입력받음)
+-            st = new StringTokenizer(br.readLine(), " ");
+-
+-            // String토큰들을 Intger로 형변환
+-            int a = Integer.parseInt(st.nextToken());
+-            int b = Integer.parseInt(st.nextToken());
+-
+-            // 정적메소드 gcd 실행결과인 최대공약수를 d변수에 입력
+-            int d = gcd(a, b);
+-
+-            // 유클리드 호제법 사용
+-            // 결과를 StringBuilder에 입력하고 줄바꿈을 붙인다.
+-            sb.append(a * b / d).append('\n');
+-        }
+-        // 반복문 종료후 결과값들이 들어있는 sb출력
+-        System.out.println(sb);
+-
+-    }
+-
+-    // 최대공약수 반복문 방식
+-    public static int gcd(int a, int b) {
+-
+-        while (b != 0) {
+-            int r = a % b; // 나머지를 구해준다.
+-
+-            // GCD(a, b) = GCD(b, r)이므로 변환한다.
+-            a = b;
+-            b = r;
+-        }
+-        return a;
+-    }
+-
+-}
+Index: src/main/java/bsjin1122/BOJ/week01/BOJ_17299.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week01/BOJ_17299.java b/src/main/java/bsjin1122/BOJ/week01/BOJ_17299.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week01/BOJ_17299.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,45 +0,0 @@
+-package bsjin1122.BOJ.week01;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.Stack;
+-import java.util.StringTokenizer;
+-
+-// 오등큰수
+-public class BOJ_17299 {
+-    static final int MAX = 1_000_001;
+-
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        Stack<Integer> stack = new Stack<>();
+-        int n = Integer.parseInt(br.readLine());
+-        int count[] = new int[MAX];
+-        int index[] = new int[n];
+-        int ans[] = new int[n];
+-
+-        StringTokenizer st = new StringTokenizer(br.readLine());
+-        for(int i = 0; i < n; i++){
+-            index[i] = Integer.parseInt(st.nextToken());
+-            count[index[i]]++;
+-        }
+-        for(int i = 0; i< n; i++){
+-            while(!stack.isEmpty() && count[index[i]] > count[index[stack.peek()]]){
+-                ans[stack.pop()] = index[i];
+-            }
+-            stack.push(i);
+-        }
+-
+-        while(!stack.isEmpty()){
+-            ans[stack.pop()] = -1;
+-        }
+-
+-        StringBuilder sb = new StringBuilder();
+-
+-        for(int i = 0; i < n; i++){
+-            sb.append(ans[i] + " ");
+-        }
+-        System.out.println(sb.toString());
+-
+-    }
+-}
+Index: src/main/java/bsjin1122/BOJ/week01/BOJ_17298.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week01/BOJ_17298.java b/src/main/java/bsjin1122/BOJ/week01/BOJ_17298.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week01/BOJ_17298.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,47 +0,0 @@
+-package bsjin1122.BOJ.week01;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.*;
+-import java.util.stream.Collectors;
+-import java.util.stream.IntStream;
+-
+-// 오큰수
+-// data[] 에 값을 넣고 해당 인덱스의 값과 그 다음 data[i]번째 값보다 작으면(stack이 비어있지 않은 상태에서)
+-// stack을 pop 한 인덱스의 값이 = data[i]가 된다.
+-// false인 경우엔 stack에 i값 넣기
+-public class BOJ_17298 {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        StringBuffer sb = new StringBuffer();
+-
+-        int N = Integer.parseInt(br.readLine()); // 입력할 숫자의 수
+-        int[] data = new int[N]; // 숫자 수만큼 배열 생성
+-
+-        StringTokenizer st = new StringTokenizer(br.readLine());
+-
+-        for(int i =0; i<N; i++){
+-            data[i] = Integer.parseInt(st.nextToken()); // 쪼개진 숫자만큼 배열에 넣기
+-        }
+-
+-        Stack<Integer> stack = new Stack<>(); // 스택 할당
+-
+-        for(int i =0; i<N; i++){
+-            while(!stack.isEmpty() && data[stack.peek()] < data[i]){
+-                data[stack.pop()] = data[i];
+-            }
+-            stack.add(i);
+-        }
+-        while(!stack.isEmpty()) {
+-            data[stack.pop()] = -1;
+-        }
+-        for(int i = 0; i < N; i++){
+-            sb.append(data[i]).append(" ");
+-        }
+-
+-        System.out.println(sb);
+-
+-    }
+-
+-}
+Index: src/main/java/bsjin1122/BOJ/week02/BOJ_11656.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week02/BOJ_11656.java b/src/main/java/bsjin1122/BOJ/week02/BOJ_11656.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week02/BOJ_11656.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,37 +0,0 @@
+-package bsjin1122.BOJ.week02;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-import java.util.ArrayList;
+-import java.util.Collections;
+-import java.util.List;
+-/**
+- * @author bsjin
+- * @date 2023/12/25
+- * @note 백준 203-자료구조1 접미사 배열(11656)
+- */
+-
+-/**
+- * 문제: 접미사 배열은 문자열 S의 모든 접미사를 사전순으로 정렬해 놓은 배열이다.
+- baekjoon의 접미사는 baekjoon, aekjoon, ekjoon, kjoon, joon, oon, on, n 으로 총 8가지가 있고, 이를 사전순으로 정렬하면, aekjoon, baekjoon, ekjoon, joon, kjoon, n, on, oon이 된다.
+- 문자열 S가 주어졌을 때, 모든 접미사를 사전순으로 정렬한 다음 출력하는 프로그램을 작성하시오.
+- *
+- */
+-public class BOJ_11656 {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        String str = br.readLine(); // 문자열 S입력
+-        List<String> arrList = new ArrayList<>();
+-
+-        for(int i = 0; i < str.length(); i++){
+-            arrList.add(str.substring(i)); // 문자열을 잘라서 arrayList에 넣는다.
+-        }
+-
+-        Collections.sort(arrList); // 알파벳 순으로 정렬
+-
+-        for(String string : arrList){ // 출력
+-            System.out.println(string);
+-        }
+-    }
+-}
+Index: src/main/java/coderkim/BOJ/week03/week03_02/zeroCountInCombination_2004/Main.java
+===================================================================
+diff --git a/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountInCombination_2004/Main.java b/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountInCombination_2004/Main.java
+deleted file mode 100644
+--- a/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountInCombination_2004/Main.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,81 +0,0 @@
+-package main.java.coderkim.BOJ.week03.week03_02.zeroCountInCombination_2004;
+-
+-import java.util.Scanner;
+-
+-/**
+-  @Title 조합 0의 개수(2004)
+-  @Since 2024.01.03
+-  @Content
+-  문제
+-  (n
+-  m)의 끝자리 0의 개수를 출력하는 프로그램을 작성하시오.
+-
+-  입력
+-  첫째 줄에 정수 n,m (0 ≤  m ≤ n ≤ 2,000,000,000, n ≠ 0) 이 들어온다
+-
+-  출력
+-  첫째 줄에
+-  (n
+-  m)의 끝자리 0의 개수를 출력한다.
+- */
+-// 1번 코드
+-public class Main {
+-
+-    public static void main(String[] args) throws Exception {
+-        /** 조합 공식:
+-
+-         (n    =   n!/ m!(n−m)!
+-         m)                    */
+-        Scanner sc = new Scanner(System.in);
+-        int n = sc.nextInt();
+-        int m = sc.nextInt();
+-
+-        // 0은 2 * 5로 생겨남
+-        // 조합은 nCm을 계산할 때, n!을 m!과 (n-m)!로 나누면서 중복되는 2와 5의 인수를 제거하기 때문에
+-        // 2와 5를 둘 다 고려 해야 함
+-        // 더 적은 경우가 0의 개수
+-
+-        // 2로 0의 개수를 count 할 때
+-        int caseNumTwo = zeroCount(n,2) - zeroCount(m,2) - zeroCount(n-m,2);
+-        // 5로 0의 개수를 count 할 때
+-        int caseNumFive = zeroCount(n,5) -zeroCount(m,5) - zeroCount(n-m,5);
+-
+-        /**
+-         (n
+-         m)의 끝자리 0의 개수*/;
+-         //더 작은 경우의 수
+-        int result = Math.min(caseNumTwo,caseNumFive);
+-        System.out.println(result);
+-        sc.close();
+-    }
+-
+-    // factorial 0의 개수를 카운팅 하는 메소드
+-    // 2 또는 5로 나누어 떨어지는 수의 개수를 카운팅
+-    static Integer zeroCount(int num,int divisor) {
+-        int count = 0;
+-
+-        /**while문**/
+-
+-        // num이 2 또는 5보다 더 작아질 때까지 반복
+-        while (num >= divisor) {
+-            count += num / divisor;
+-            num /= divisor;
+-        }
+-
+-
+-        /**for문으로 할 때는 i의 값이 계속 증가하여 오버플로우 될 수 있으므로 long형으로 해야한다 **/
+-        // i가 num보다 커질 때까지 반복
+-
+-        // (1) 오버 플로우가 나는 예시 코드
+-//        for (int i = divisor; i <= num; i *= divisor) {
+-//            count += num / i;
+-//        }
+-
+-        // (2) 오버 플로우가 안 나도록 long형으로 수정한 코드
+-//        for (long i = divisor; i <= num; i *= divisor) {
+-//            count += num / i;
+-//        }
+-
+-        return count;
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/bsjin1122/BOJ/week02/BOJ_10430.java
+===================================================================
+diff --git a/src/main/java/bsjin1122/BOJ/week02/BOJ_10430.java b/src/main/java/bsjin1122/BOJ/week02/BOJ_10430.java
+deleted file mode 100644
+--- a/src/main/java/bsjin1122/BOJ/week02/BOJ_10430.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,40 +0,0 @@
+-package bsjin1122.BOJ.week02;
+-
+-import java.io.BufferedReader;
+-import java.io.IOException;
+-import java.io.InputStreamReader;
+-
+-/** @author bsjin
+- * @date 2023/12/25
+- * @title 백준 10430 나머지
+- *
+- * 문제
+- * (A + B)%C는 ((A%C) + (B%C))%C 와 같을까?
+- * (A×B)%C는 ((A%C) × (B%C))%C 와 같을까?
+- * 세 수 A, B, C가 주어졌을 때, 위의 네 가지 값을 구하는 프로그램을 작성하시오.
+- * 첫째 줄에 (A+B)%C, 둘째 줄에 ((A%C) + (B%C))%C, 셋째 줄에 (A×B)%C, 넷째 줄에 ((A%C) × (B%C))%C를 출력한다.
+- */
+-
+-public class BOJ_10430 {
+-    public static void main(String[] args) throws IOException {
+-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+-        String str = br.readLine(); // 문자열 S입력
+-        // 공백을 기준으로 문자열을 분리하여 문자열 배열로 만듭니다.
+-        String[] strArray = str.split(" ");
+-
+-        // int 배열을 선언하여 문자열 배열을 int로 변환하여 담습니다.
+-        int[] intArray = new int[strArray.length];
+-        for (int i = 0; i < strArray.length; i++) {
+-            intArray[i] = Integer.parseInt(strArray[i]);
+-        }
+-
+-        int a = intArray[0];
+-        int b = intArray[1];
+-        int c = intArray[2];
+-
+-        System.out.println((a+b)% c);
+-        System.out.println(((a%c)+(b%c))%c);
+-        System.out.println((a*b)%c);
+-        System.out.println(((a%c)* (b%c))%c);
+-    }
+-}
+Index: src/main/java/coderkim/BOJ/week03/week03_02/zeroCountFactorial_1676/Main.java
+===================================================================
+diff --git a/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountFactorial_1676/Main.java b/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountFactorial_1676/Main.java
+deleted file mode 100644
+--- a/src/main/java/coderkim/BOJ/week03/week03_02/zeroCountFactorial_1676/Main.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,42 +0,0 @@
+-package main.java.coderkim.BOJ.week03.week03_02.zeroCountFactorial_1676;
+-
+-import java.util.Scanner;
+-
+-/**
+- @Title 팩토리얼 0의 개수(1676)
+- @Since 2024.01.03
+- @Content
+-
+- 문제
+- N!(연산값이)에서 뒤에서부터 처음 0이 아닌 숫자가 나올 때까지 0의 개수를 구하는 프로그램을 작성하시오.
+-
+- 입력
+- 첫째 줄에 N이 주어진다. (0 ≤ N ≤ 500)
+-
+- 출력
+- 첫째 줄에 구한 0의 개수를 출력한다.
+-
+- */
+-public class Main {
+-    public static void main(String[] args) {
+-
+-        Scanner sc = new Scanner(System.in);
+-
+-        int input = sc.nextInt();
+-        int output = 0;
+-
+-        // for문과 while문을 이용한 방법은 숫자가 클 때 너무 성능이 떨어지기 때문에
+-        // 아래와 같은 방법으로 해결했다
+-
+-        // 5의 개수를 센다
+-        // 모든 홀수 숫자에는 2가 하나씩 들어가기 때문에 2의 개수는 항상 5보다 많다
+-        // 따라서 0의 개수는 2와 5의 곱의 개수로 생성되며, 2의 개수는 항상 5보다 많기 때문에 5의 개수로 센다
+-        for(int i = 5; i <= input; i *=5){
+-            output += input / i;
+-        }
+-
+-        System.out.println(output);
+-
+-        sc.close();
+-    }
+-}
+Index: src/main/java/coderkim/BOJ/week03/week03_02/gcdSum_9613/Main.java
+===================================================================
+diff --git a/src/main/java/coderkim/BOJ/week03/week03_02/gcdSum_9613/Main.java b/src/main/java/coderkim/BOJ/week03/week03_02/gcdSum_9613/Main.java
+deleted file mode 100644
+--- a/src/main/java/coderkim/BOJ/week03/week03_02/gcdSum_9613/Main.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ /dev/null	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
+@@ -1,62 +0,0 @@
+-package main.java.coderkim.BOJ.week03.week03_02.gcdSum_9613;
+-
+-import java.util.Scanner;
+-
+-/**
+- @Title GCD 합(9613)
+- @Since 2024.01.05
+- @Content 문제
+- 양의 정수 n개가 주어졌을 때, 가능한 모든 쌍의 GCD의 합을 구하는 프로그램을 작성하시오.
+-
+-입력
+- 첫째 줄에 테스트 케이스의 개수 t (1 ≤ t ≤ 100)이 주어진다.
+- 각 테스트 케이스는 한 줄로 이루어져 있다.
+- 각 테스트 케이스는 수의 개수 n (1 < n ≤ 100)가 주어지고, 다음에는 n개의 수가 주어진다.
+- 입력으로 주어지는 수는 1,000,000을 넘지 않는다.
+-
+- 출력
+- 각 테스트 케이스마다 가능한 모든 쌍의 GCD의 합을 출력한다.
+- */
+-
+-public class Main {
+-    // 최대 입력값이 1,000,000까지의 약수 배열을 생성
+-    static int[] divisors = new int[1000001];
+-
+-    // 최대 공약수를 계산하는 메소드
+-    static int gcd(int a, int b) {
+-        if (b == 0) return a;
+-        return gcd(b, a % b);
+-    }
+-
+-    public static void main(String[] args) {
+-        Scanner sc = new Scanner(System.in);
+-
+-        // 1. 첫째 줄에 테스트 케이스의 개수 t (1 ≤ t ≤ 100)이 주어진다.
+-        int t = sc.nextInt();
+-
+-        // case 입력은 총 t번 반복
+-        for (int i = 0; i < t; i++) {
+-            // 2. 각 테스트 케이스는 수의 개수 n (1 < n ≤ 100)가 주어지고, (n = 각 테스트 케이스의 length)
+-            int n = sc.nextInt();
+-            int[] numInCase = new int[n];
+-
+-            // 3. 다음에는 n개의 수가 주어진다 (각 테스트 케이스에 들어가는 숫자 입력)
+-            for (int j = 0; j < n; j++) {
+-                numInCase[j] = sc.nextInt();
+-            }
+-
+-            // GCD 계산 및 약수 배열 초기화
+-            long gcdSum = 0;
+-            for (int x = 0; x < n; x++) {
+-                for (int y = x + 1; y < n; y++) {
+-                    int commonDivisor = gcd(numInCase[x], numInCase[y]);
+-                    gcdSum += commonDivisor;
+-                }
+-            }
+-
+-            // 4. 각 테스트 케이스마다 가능한 모든 쌍의 GCD의 합 결과 출력
+-            System.out.println(gcdSum);
+-        }
+-        sc.close();
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.java.coderkim.BOJ.week03.week03_02.hideAndSeek6_17087;\r\n\r\nimport java.util.Scanner;\r\n\r\n/**\r\n @Title 숨바꼭질6(17087)\r\n @Since 2024.01.05\r\n @Content\r\n !!!!!!!!!!!이분탐색!!!!!!(다시 한 번 풀기)\r\n\r\n 문제\r\n 수빈이는 동생 N명과 숨바꼭질을 하고 있다. 수빈이는 현재 점 S에 있고, 동생은 A1, A2, ..., AN에 있다.\r\n\r\n 수빈이는 걸어서 이동을 할 수 있다. 수빈이의 위치가 X일때 걷는다면 1초 후에 X+D나 X-D로 이동할 수 있다. 수빈이의 위치가 동생이 있는 위치와 같으면, 동생을 찾았다고 한다.\r\n\r\n 모든 동생을 찾기위해 D의 값을 정하려고 한다. 가능한 D의 최댓값을 구해보자.\r\n\r\n 입력\r\n 첫째 줄에 N(1 ≤ N ≤ 105)과 S(1 ≤ S ≤ 109)가 주어진다. 둘째 줄에 동생의 위치 Ai(1 ≤ Ai ≤ 109)가 주어진다. 동생의 위치는 모두 다르며, 수빈이의 위치와 같지 않다.\r\n\r\n 출력\r\n 가능한 D값의 최댓값을 출력한다.\r\n\r\n */\r\n\r\n//TODO: 다시 풀기.... 이분탐색...\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        int n = scanner.nextInt(); // 동생의 수\r\n        int s = scanner.nextInt(); // 수빈이의 위치\r\n        int[] positions = new int[n];\r\n\r\n        for (int i = 0; i < n; i++) {\r\n            positions[i] = scanner.nextInt(); // 동생들의 위치\r\n        }\r\n\r\n        /** 가능한 D 값 중 최댓값을 찾기 위해 이분 탐색 사용*/\r\n        long left = 0; // D의 최솟값\r\n        long right = 1000000000; // D의 최댓값\r\n        long result = 0;\r\n\r\n        while (left <= right) {\r\n            long mid = (left + right) / 2;\r\n            long time = 0;\r\n\r\n            for (int i = 0; i < n; i++) {\r\n                long distance = Math.abs(positions[i] - s); // 수빈이와 동생 사이의 거리\r\n                long moves = distance / mid; // 걷기로 이동해야 하는 횟수\r\n\r\n                if (distance % mid != 0) {\r\n                    moves++; // 나머지가 남으면 한 번 더 이동\r\n                }\r\n\r\n                time += moves; // 해당 동생을 찾는데 걸리는 총 시간 추가\r\n            }\r\n\r\n            if (time <= mid) {\r\n                result = mid; // 현재 D값으로 모든 동생을 찾을 수 있음\r\n                right = mid - 1; // 더 큰 D값을 찾기 위해 범위를 왼쪽으로 이동\r\n            } else {\r\n                left = mid + 1; // 현재 D값으로는 모든 동생을 찾을 수 없음\r\n            }\r\n        }\r\n\r\n        System.out.println(result);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.java b/src/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.java
+--- a/src/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.java	(revision 44b4b615b6123eee947b7b0697161fe48d138283)
++++ b/src/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.java	(date 1705334691593)
+@@ -1,13 +1,11 @@
+ package main.java.coderkim.BOJ.week03.week03_02.hideAndSeek6_17087;
+ 
+-import java.util.Scanner;
+-
+ /**
+  @Title 숨바꼭질6(17087)
+  @Since 2024.01.05
+  @Content
+  !!!!!!!!!!!이분탐색!!!!!!(다시 한 번 풀기)
+-
++ 
+  문제
+  수빈이는 동생 N명과 숨바꼭질을 하고 있다. 수빈이는 현재 점 S에 있고, 동생은 A1, A2, ..., AN에 있다.
+ 
+@@ -22,48 +20,8 @@
+  가능한 D값의 최댓값을 출력한다.
+ 
+  */
+-
+-//TODO: 다시 풀기.... 이분탐색...
+ public class Main {
+     public static void main(String[] args) {
+-        Scanner scanner = new Scanner(System.in);
+-
+-        int n = scanner.nextInt(); // 동생의 수
+-        int s = scanner.nextInt(); // 수빈이의 위치
+-        int[] positions = new int[n];
+-
+-        for (int i = 0; i < n; i++) {
+-            positions[i] = scanner.nextInt(); // 동생들의 위치
+-        }
+-
+-        /** 가능한 D 값 중 최댓값을 찾기 위해 이분 탐색 사용*/
+-        long left = 0; // D의 최솟값
+-        long right = 1000000000; // D의 최댓값
+-        long result = 0;
+-
+-        while (left <= right) {
+-            long mid = (left + right) / 2;
+-            long time = 0;
+-
+-            for (int i = 0; i < n; i++) {
+-                long distance = Math.abs(positions[i] - s); // 수빈이와 동생 사이의 거리
+-                long moves = distance / mid; // 걷기로 이동해야 하는 횟수
+-
+-                if (distance % mid != 0) {
+-                    moves++; // 나머지가 남으면 한 번 더 이동
+-                }
+-
+-                time += moves; // 해당 동생을 찾는데 걸리는 총 시간 추가
+-            }
+ 
+-            if (time <= mid) {
+-                result = mid; // 현재 D값으로 모든 동생을 찾을 수 있음
+-                right = mid - 1; // 더 큰 D값을 찾기 위해 범위를 왼쪽으로 이동
+-            } else {
+-                left = mid + 1; // 현재 D값으로는 모든 동생을 찾을 수 없음
+-            }
+-        }
+-
+-        System.out.println(result);
+-    }
+-}
+\ No newline at end of file
++    }
++}
