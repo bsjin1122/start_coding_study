@@ -5,27 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09e90688-26ca-40d8-b6d7-0a5829d578b0" name="변경" comment=".gitignore 및 pom.xml 제거">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/2024-01-16_오전_1_09,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/리베이스_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodingTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_10799.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17298.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17299.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17413.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_10430.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_11656.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_1934.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_2609.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week03/BOJ_1978.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week03/BOJ_1979.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/boj_week1_01/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week01/week01_01/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week01/week01_02/alphabet_count_10808/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week01/week01_02/find_alphabet_10809/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week01/week01_02/postfix_expression1_1918/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week01/week01_02/postfix_expression2_1935/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_01/ROT13_11655/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_01/four_numbers_10824/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_01/input_str_analysis_10820/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_01/word_length_2743/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_02/gcdlcm_2609/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_02/lcm_1934/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_02/remainder_10430/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week02/week02_02/suffix_array_11656/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_01/factorial_10872/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_01/findPrimes_1978/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_01/goldbachExplorer_6588/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_01/resultPrimes_1929/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_02/gcdSum_9613/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_02/hideAndSeek6_17087/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_02/zeroCountFactorial_1676/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week03/week03_02/zeroCountInCombination_2004/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week04/week04_01/binaryToOctal_1373/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week04/week04_01/goldbachPartition_17103/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week04/week04_01/nagativeBinary_2089/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week04/week04_01/octalToBinary_1212/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_01/baseConversion1_2745/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_01/baseConversion2_11005/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_01/baseConversion3_11576/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_01/factorization_11653/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_02/Tiling2xN1_11726/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_02/Tiling2xN2_11727/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_02/makeItOne_1463/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/start_coding_study/main/java/coderkim/BOJ/week05/week05_02/oneTwoThreeSum_9095/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_coding_study.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_10799.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17298.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17299.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week01/BOJ_17413.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_10430.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_11656.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_1934.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week02/BOJ_2609.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week03/BOJ_1978.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bsjin1122/BOJ/week03/BOJ_1979.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
